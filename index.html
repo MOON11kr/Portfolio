@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,7 +57,6 @@
             top: 0;
             z-index: 100;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: var(--transition);
         }
         
         header.scrolled {
@@ -97,7 +97,6 @@
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: var(--transition);
             position: relative;
             padding: 5px 0;
         }
@@ -129,7 +128,6 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition);
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -179,20 +177,17 @@
         .hero h1 {
             font-size: 3.5rem;
             margin-bottom: 1rem;
-            animation: fadeInUp 1s ease;
         }
         
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 2rem;
-            animation: fadeInUp 1s ease 0.2s both;
         }
         
         .hero-subtitle {
             font-size: 1.1rem;
             opacity: 0.9;
-            animation: fadeInUp 1s ease 0.4s both;
         }
         
         .btn {
@@ -203,10 +198,8 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: var(--transition);
             border: none;
             cursor: pointer;
-            animation: fadeInUp 1s ease 0.6s both;
         }
         
         .btn:hover {
@@ -276,7 +269,6 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
         }
         
         .profile-img-container:hover {
@@ -344,7 +336,6 @@
             border-radius: 15px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
         }
         
         .video-container:hover {
@@ -361,7 +352,6 @@
             justify-content: center;
             color: white;
             cursor: pointer;
-            transition: var(--transition);
             position: relative;
             overflow: hidden;
         }
@@ -372,7 +362,6 @@
             width: 100%;
             height: 100%;
             background: rgba(0,0,0,0.2);
-            transition: var(--transition);
         }
         
         .video-placeholder:hover:before {
@@ -384,7 +373,6 @@
             margin-bottom: 1rem;
             position: relative;
             z-index: 1;
-            transition: var(--transition);
         }
         
         .video-placeholder:hover .video-icon {
@@ -396,6 +384,62 @@
             margin-bottom: 0.5rem;
             position: relative;
             z-index: 1;
+        }
+        
+        /* Gallery Section */
+        .gallery-section {
+            background-color: #f5f7fa;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .gallery-item {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 200px;
+            background-color: #f8f9fa;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .gallery-item.main {
+            grid-column: span 2;
+            grid-row: span 2;
+            height: 420px;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            color: white;
+            padding: 20px;
+            transform: translateY(100%);
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
         }
         
         /* Education & Experience */
@@ -442,7 +486,6 @@
             border-radius: 10px;
             box-shadow: var(--shadow);
             position: relative;
-            transition: var(--transition);
         }
         
         .timeline-content:hover {
@@ -480,6 +523,120 @@
             font-size: 0.9rem;
         }
         
+        /* PhD Proposal Section */
+        .phd-proposal {
+            background-color: white;
+        }
+        
+        .proposal-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .proposal-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .proposal-intro p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .proposal-downloads {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .proposal-item {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+        }
+        
+        .proposal-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .proposal-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--secondary);
+        }
+        
+        .proposal-details {
+            margin-top: 3rem;
+        }
+        
+        .research-objectives {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .research-objectives h3 {
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .objectives-list {
+            list-style: none;
+        }
+        
+        .objectives-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .objectives-list li:before {
+            content: '▸';
+            color: var(--secondary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .timeline-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .timeline-table th, .timeline-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .timeline-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .timeline-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .timeline-table tr:hover {
+            background-color: #e9ecef;
+        }
+        
+        .proposal-gallery {
+            margin-top: 3rem;
+        }
+        
         /* Skills Section */
         .skills-grid {
             display: grid;
@@ -492,7 +649,6 @@
             padding: 2rem;
             border-radius: 10px;
             box-shadow: var(--shadow);
-            transition: var(--transition);
         }
         
         .skill-category:hover {
@@ -521,7 +677,6 @@
             margin-bottom: 0.8rem;
             display: flex;
             align-items: center;
-            transition: var(--transition);
             padding: 5px 0;
         }
         
@@ -548,7 +703,6 @@
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
-            transition: var(--transition);
             display: flex;
             flex-direction: column;
             height: 100%;
@@ -573,7 +727,6 @@
             width: 100%;
             height: 100%;
             object-fit: contain;
-            transition: var(--transition);
             padding: 15px;
         }
         
@@ -625,7 +778,6 @@
             padding: 2rem;
             margin-bottom: 2rem;
             box-shadow: var(--shadow);
-            transition: var(--transition);
         }
         
         .research-item:hover {
@@ -647,65 +799,6 @@
             border-radius: 8px;
             margin: 1rem 0;
             border-left: 4px solid var(--secondary);
-        }
-        
-        /* Gallery Section */
-        .gallery-section {
-            background-color: #f5f7fa;
-        }
-        
-        .gallery-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-        
-        .gallery-item {
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            height: 200px;
-            background-color: #f8f9fa;
-            position: relative;
-            cursor: pointer;
-        }
-        
-        .gallery-item:hover {
-            transform: scale(1.05);
-        }
-        
-        .gallery-item.main {
-            grid-column: span 2;
-            grid-row: span 2;
-            height: 420px;
-        }
-        
-        .gallery-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover .gallery-image {
-            transform: scale(1.1);
-        }
-        
-        .gallery-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(transparent, rgba(0,0,0,0.7));
-            color: white;
-            padding: 20px;
-            transform: translateY(100%);
-            transition: var(--transition);
-        }
-        
-        .gallery-item:hover .gallery-overlay {
-            transform: translateY(0);
         }
         
         /* Resume Download Section */
@@ -757,7 +850,6 @@
             padding: 1.8rem;
             border-radius: 10px;
             backdrop-filter: blur(10px);
-            transition: var(--transition);
         }
         
         .feature-item:hover {
@@ -786,7 +878,6 @@
             padding: 1.5rem;
             border-radius: 10px;
             box-shadow: var(--shadow);
-            transition: var(--transition);
             text-decoration: none;
             color: inherit;
         }
@@ -827,7 +918,6 @@
             background: var(--gradient);
             color: white;
             text-decoration: none;
-            transition: var(--transition);
             font-size: 1.2rem;
         }
         
@@ -856,7 +946,6 @@
             z-index: 1000;
             align-items: center;
             justify-content: center;
-            animation: fadeIn 0.3s ease;
         }
         
         .modal-content {
@@ -866,7 +955,6 @@
             max-width: 800px;
             padding: 2rem;
             position: relative;
-            animation: slideUp 0.4s ease;
         }
         
         .close-modal {
@@ -876,7 +964,6 @@
             font-size: 1.8rem;
             cursor: pointer;
             color: var(--gray);
-            transition: var(--transition);
         }
         
         .close-modal:hover {
@@ -894,34 +981,6 @@
             justify-content: center;
             color: white;
             margin-bottom: 1.5rem;
-        }
-        
-        /* Animations */
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
         
         /* Responsive Design */
@@ -957,7 +1016,6 @@
                 align-items: center;
                 justify-content: flex-start;
                 padding-top: 2rem;
-                transition: var(--transition);
                 box-shadow: -5px 0 15px rgba(0,0,0,0.1);
             }
             
@@ -1023,6 +1081,15 @@
             .contact-info {
                 grid-template-columns: 1fr;
             }
+            
+            .proposal-downloads {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline-table {
+                display: block;
+                overflow-x: auto;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1064,7 +1131,6 @@
             text-decoration: none;
             font-size: 1.2rem;
             box-shadow: var(--shadow);
-            transition: var(--transition);
             opacity: 0;
             visibility: hidden;
             z-index: 99;
@@ -1094,11 +1160,12 @@
                 <ul class="nav-links">
                     <li><a href="#about">About</a></li>
                     <li><a href="#intro-video">Intro</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#phd-proposal">PhD Proposal</a></li>
                     <li><a href="#education">Education</a></li>
                     <li><a href="#research">Research</a></li>
                     <li><a href="#skills">Skills</a></li>
                     <li><a href="#projects">Projects</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                     <li><a href="Karishma_Patel_Resume.pdf" download class="download-btn">
                         <i class="fas fa-download"></i> Resume
@@ -1137,17 +1204,16 @@
                     </div>
                 </div>
                
-<div class="about-text">
-    <h3>Professional Summary</h3>
-    <p>Dynamic and research-driven scholar specializing in Artificial Intelligence, Machine Learning, and Natural Language Processing, with a strong academic foundation in Computer and Information Sciences.</p>
-    
-    <p>My research focuses on creating accessible, ethical AI solutions that serve humanity. I'm passionate about interdisciplinary work that bridges Computer Science, Marketing, and Psychology to understand and ethically influence human behavior through technology.</p>
-    
-    <p>I find the learning process endlessly fascinating, especially when exploring intersections between disparate fields. With access to resources comes responsibility—I'm driven to contribute meaningfully to technological development that makes a tangible difference.</p>
-    
-    <p>Ultimately, I aspire to join academia as a professor, continuing research while mentoring future innovators in an inclusive learning environment that explores the rich connections between technology and humanity.</p>
-</div>
-
+                <div class="about-text">
+                    <h3>Professional Summary</h3>
+                    <p>Dynamic and research-driven scholar specializing in Artificial Intelligence, Machine Learning, and Natural Language Processing, with a strong academic foundation in Computer and Information Sciences.</p>
+                    
+                    <p>My research focuses on creating accessible, ethical AI solutions that serve humanity. I'm passionate about interdisciplinary work that bridges Computer Science, Marketing, and Psychology to understand and ethically influence human behavior through technology.</p>
+                    
+                    <p>I find the learning process endlessly fascinating, especially when exploring intersections between disparate fields. With access to resources comes responsibility—I'm driven to contribute meaningfully to technological development that makes a tangible difference.</p>
+                    
+                    <p>Ultimately, I aspire to join academia as a professor, continuing research while mentoring future innovators in an inclusive learning environment that explores the rich connections between technology and humanity.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1163,6 +1229,162 @@
                     </div>
                     <h3>Watch My Introduction Video</h3>
                     <p>Click to play (2:30 min)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery-section">
+        <div class="container">
+            <h2 class="section-title">Gallery</h2>
+            <div class="gallery-container">
+                <div class="gallery-item main">
+                    <img src="convamain1.jpeg" alt="Main Profile Photo" class="gallery-image">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="conva2.jpeg" alt="Research Presentation" class="gallery-image">
+                    <div class="gallery-overlay">
+                        
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="cybersecurityevent.jpeg" alt="Cybersecurity Event" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span>Cybersecurity Event</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="goldmedel.jpeg" alt="Gold Medal Achievement" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span>Gold Medal Award</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="MTC.jpeg" alt="MTC Event" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span>Military traning</span>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Ruteachers.jpeg" alt="RU Teachers Event" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <span>Academic Event</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PhD Proposal Section -->
+    <section id="phd-proposal" class="phd-proposal">
+        <div class="container">
+            <h2 class="section-title">PhD Research Proposal</h2>
+            <div class="proposal-content">
+                <div class="proposal-intro">
+                    <h3>Designing Interpretable and Lightweight Deep Learning Systems for Early Melanoma Detection</h3>
+                    <p>My academic journey defies simple categorization—and that versatility is my greatest strength. While graduating at the top of my computer science class, I ran a freelance graphic design business, explored hospitality ventures, and served as class representative. These experiences taught me a fundamental lesson: the most innovative solutions often emerge at the intersection of diverse disciplines.</p>
+                    
+                    <p>Melanoma, a deadly form of skin cancer, is treatable if detected early, yet access to reliable diagnostic tools remains limited, particularly in underserved regions. My proposed research aims to develop interpretable deep learning models for melanoma detection that clinicians can trust and lightweight systems suitable for telemedicine applications.</p>
+                </div>
+                
+                <div class="proposal-downloads">
+                    <div class="proposal-item">
+                        <div class="proposal-icon">
+                            <i class="fas fa-file-pdf"></i>
+                        </div>
+                        <h3>PhD Proposal Document</h3>
+                        <p>Complete research proposal outlining objectives, methodology, and expected contributions</p>
+                        <a href="Research_proposal_by_Karishma_M_Patel.pdf" download class="btn" style="margin-top: 1rem;">
+                            <i class="fas fa-download"></i> Download Proposal
+                        </a>
+                    </div>
+                    </div>
+                    </div><div>
+                
+                <div class="proposal-details">
+                    <h3>Research Questions and Objectives</h3>
+                    <div class="research-objectives">
+                        <p>This research addresses the following questions:</p>
+                        <ul class="objectives-list">
+                            <li>How can deep learning models for melanoma detection be designed to maximize interpretability without sacrificing clinical accuracy?</li>
+                            <li>What techniques can optimize lightweight models for deployment in telemedicine platforms?</li>
+                            <li>How can interdisciplinary approaches enhance the usability of AI-driven diagnostic tools for clinicians and patients?</li>
+                        </ul>
+                        
+                        <h4 style="margin-top: 2rem;">Key Objectives:</h4>
+                        <ul class="objectives-list">
+                            <li>Develop interpretable deep learning models using techniques like attention mechanisms and feature visualization</li>
+                            <li>Design lightweight CNN architectures optimized for mobile and telemedicine platforms</li>
+                            <li>Validate models through clinical datasets and user studies to ensure practical applicability</li>
+                        </ul>
+                    </div>
+                    
+                    <h3>Proposed Research Timeline</h3>
+                    <table class="timeline-table">
+                        <thead>
+                            <tr>
+                                <th>Phase</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Literature Review</td>
+                                <td>Year 1, Months 1–6</td>
+                            </tr>
+                            <tr>
+                                <td>Data Collection</td>
+                                <td>Year 1, Months 6–12</td>
+                            </tr>
+                            <tr>
+                                <td>Model Development</td>
+                                <td>Year 2, Months 1–12</td>
+                            </tr>
+                            <tr>
+                                <td>Validation and Testing</td>
+                                <td>Year 3, Months 1–9</td>
+                            </tr>
+                            <tr>
+                                <td>Thesis Writing</td>
+                                <td>Year 3, Months 9–12</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="proposal-gallery" id="phd-gallery">
+                    <h3 style="margin-bottom: 2rem; text-align: center;">PhD Research Gallery</h3>
+                    <div class="gallery-container">
+                        <div class="gallery-item">
+                            <img src="melanoma_research1.PNG" alt="Melanoma Detection Concept" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <span>Melanoma Detection Concept</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="ai_medical_research.PNG" alt="AI Medical Research" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <span>AI Medical Research</span>
+                            </div>
+                        </div>
+                        
+                        <div class="gallery-item">
+                            <img src="telemedicine_ai.PNG" alt="Telemedicine AI Applications" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <span>Telemedicine AI Applications</span>
+                            </div>
+                        </div>
+                        <div class="gallery-item">
+                            <img src="interpretable_ai.PNG" alt="Interpretable AI Models" class="gallery-image">
+                            <div class="gallery-overlay">
+                                <span>Interpretable AI Models</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1376,51 +1598,6 @@
                             <a href="https://ruchiimpex.in/" target="_blank" class="btn btn-outline">Live Demo</a>
                             <a href="#" class="btn">GitHub</a>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="gallery-section">
-        <div class="container">
-            <h2 class="section-title">Gallery</h2>
-            <div class="gallery-container">
-                <div class="gallery-item main">
-                    <img src="convamain1.jpeg" alt="Main Profile Photo" class="gallery-image">
-                    <div class="gallery-overlay">
-                        
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="conva2.jpeg" alt="Research Presentation" class="gallery-image">
-                    <div class="gallery-overlay">
-                        
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="cybersecurityevent.jpeg" alt="Cybersecurity Event" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span>Cybersecurity Event</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="goldmedel.jpeg" alt="Gold Medal Achievement" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span>Gold Medal Award</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="MTC.jpeg" alt="MTC Event" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span>Military traning</span>
-                    </div>
-                </div>
-                <div class="gallery-item">
-                    <img src="Ruteachers.jpeg" alt="RU Teachers Event" class="gallery-image">
-                    <div class="gallery-overlay">
-                        <span>Academic Event</span>
                     </div>
                 </div>
             </div>
@@ -1674,37 +1851,6 @@
                 }
             });
         });
-        
-        // Animation on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.about-content, .timeline-item, .skill-category, .project-card, .research-item, .feature-item');
-            
-            elements.forEach(element => {
-                const elementTop = element.getBoundingClientRect().top;
-                const elementVisible = 150;
-                
-                if (elementTop < window.innerHeight - elementVisible) {
-                    element.style.opacity = "1";
-                    element.style.transform = "translateY(0)";
-                }
-            });
-        }
-        
-        // Initialize elements with opacity 0 for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const elementsToAnimate = document.querySelectorAll('.about-content, .timeline-item, .skill-category, .project-card, .research-item, .feature-item');
-            
-            elementsToAnimate.forEach(element => {
-                element.style.opacity = "0";
-                element.style.transform = "translateY(20px)";
-                element.style.transition = "opacity 0.6s ease, transform 0.6s ease";
-            });
-            
-            // Trigger initial animation check
-            animateOnScroll();
-        });
-        
-        window.addEventListener('scroll', animateOnScroll);
     </script>
 </body>
 </html>
